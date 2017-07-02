@@ -1,0 +1,21 @@
+{
+        "name": "vtt",
+        "productName": "Validation Tool",
+        "appname": "Validation Tool",
+        "description": "A simple validation tool for easy audit trail text.",
+        "version": "1.0.0",
+        "author": "Glen Jolley <contact@glenjolley.co.uk>",
+        "main": "./main.js",
+        "scripts": {
+                "start": "electron .",
+                "postinstall": "electron-builder install-app-deps",
+                "dist": "electron-builder -w --x64 --ia32"
+        },
+        "devDependencies": {
+                "electron": "^1.6.11",
+                "electron-builder": "^19.11.1"
+        },
+        "build": {
+                "appId": "com.novaxeros.vtt"
+        }
+}
