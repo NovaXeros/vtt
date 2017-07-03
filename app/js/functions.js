@@ -69,14 +69,14 @@ endorsements_text + endorsements.value;
 
 // alert(str);
 
-clipboard.copy(str).then(
+clipboard.writeText(str).then(
 	function(){
 		document.getElementById("Copy_Button").innerText = "Copied!";
-		document.getElementById("Copy_Button").className = "Copy_Button_Slow";
+		document.getElementById("Copy_Button").className = "copy-button-slow";
 		setTimeout(function(){
 			document.getElementById("Copy_Button").style.color = "#3b5166"
 			setTimeout(function(){
-				document.getElementById("Copy_Button").className = "Copy_Button_Fast"
+				document.getElementById("Copy_Button").className = "copy-button-fast"
 				document.getElementById("Copy_Button").innerText = "Copy to Clipboard";
 				document.getElementById("Copy_Button").style.color = "#FFFFFF";
 			}, 700);
