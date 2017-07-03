@@ -1,8 +1,6 @@
 html, body {
     margin: 0px;
     -webkit-app-region: drag;
-    height: 530px;
-    width: 450px;
     overflow: hidden;
 }
 
