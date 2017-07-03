@@ -122,13 +122,13 @@ input {
     -webkit-app-region: no-drag;
 }
 
-input, textarea {
+input, textarea, select {
             border: 2px solid #f7f7f7;
             width:100%;
             background-color: #f7f7f7;
 }
 
-input:focus, textarea:focus {
+input:focus, textarea:focus, select:focus {
             border: 2px solid #fcfcfc;
             width:100%;
             background-color: #fcfcfc;
