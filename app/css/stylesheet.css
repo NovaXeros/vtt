@@ -19,6 +19,19 @@ html, body {
 
 .action-button {
             background-color: #3b5166;
+            border: none;
+            color: white;
+            padding: 8px 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            font-family: 'Roboto', sans-serif;
+            -webkit-app-region: no-drag;
+}
+
+.copy-button-slow {
+            background-color: #3b5166;
             width: 136px;
             border: none;
             color: white;
@@ -29,7 +42,22 @@ html, body {
             font-size: 14px;
             font-family: 'Roboto', sans-serif;
             -webkit-app-region: no-drag;
-            -webkit-transition: color 2s;
+            -webkit-transition: color 1s;
+}
+
+.copy-button-fast {
+            background-color: #3b5166;
+            width: 136px;
+            border: none;
+            color: white;
+            padding: 8px 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            font-family: 'Roboto', sans-serif;
+            -webkit-app-region: no-drag;
+            -webkit-transition: color 0.195s;
 }
 
 button:hover {
