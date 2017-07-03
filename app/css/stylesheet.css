@@ -21,6 +21,7 @@ html, body {
 
 .action-button {
             background-color: #3b5166;
+            width: 136px;
             border: none;
             color: white;
             padding: 8px 10px;
@@ -30,6 +31,7 @@ html, body {
             font-size: 14px;
             font-family: 'Roboto', sans-serif;
             -webkit-app-region: no-drag;
+            -webkit-transition: color 2s;
 }
 
 button:hover {
