@@ -46,6 +46,12 @@ var endorsements = document.getElementById("Endorsements");
 var jph_text = "Any joint policy holders (JPH) - ";
 var jph = document.getElementById("JPHPresent");
 
+if (underwriter.value == "Please select") {
+
+	alert("Please select underwriter first!");
+
+} else {
+  
 str = obtained_text + obtained.value + "\r\n\r\n" +
 underwriter_text + underwriter.value + "\r\n" +
 scheme_text + scheme.value + "\r\n\r\n" +
@@ -63,6 +69,18 @@ endorsements_text + endorsements.value;
 
 // alert(str);
 
-clipboard.writeText(str);
+clipboard.writeText(str).then(
+	function(){
+		document.getElementById("Copy_Button").innerText = "Copied!";
+		document.getElementById("Copy_Button").style.color = "#3b5166";
+		setTimeout(function(){ 
+			document.getElementById("Copy_Button").innerText = "Copy to Clipboard";
+			document.getElementById("Copy_Button").style.color = "#FFFFFF";
+		}, 1000);
+	},
+	function(err){console.log("failure", err);}
+);
 
-}
+};
+  
+};
