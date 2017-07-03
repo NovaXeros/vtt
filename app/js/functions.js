@@ -69,14 +69,18 @@ endorsements_text + endorsements.value;
 
 // alert(str);
 
-clipboard.writeText(str).then(
+clipboard.copy(str).then(
 	function(){
 		document.getElementById("Copy_Button").innerText = "Copied!";
-		document.getElementById("Copy_Button").style.color = "#3b5166";
-		setTimeout(function(){ 
-			document.getElementById("Copy_Button").innerText = "Copy to Clipboard";
-			document.getElementById("Copy_Button").style.color = "#FFFFFF";
-		}, 1000);
+		document.getElementById("Copy_Button").className = "Copy_Button_Slow";
+		setTimeout(function(){
+			document.getElementById("Copy_Button").style.color = "#3b5166"
+			setTimeout(function(){
+				document.getElementById("Copy_Button").className = "Copy_Button_Fast"
+				document.getElementById("Copy_Button").innerText = "Copy to Clipboard";
+				document.getElementById("Copy_Button").style.color = "#FFFFFF";
+			}, 700);
+		}, 500);
 	},
 	function(err){console.log("failure", err);}
 );
