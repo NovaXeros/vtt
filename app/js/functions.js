@@ -8,7 +8,7 @@ var obtained_text = "How cover details obtained - ";
 var obtained = document.getElementById("HowObtained");
 
 var underwriter_text = "Underwriter - ";
-var underwriter = document.getElementById("Underwriter");
+var underwriter = document.getElementById("carrier");
 
 var scheme_text = "Scheme - ";
 var scheme = document.getElementById("Scheme");
@@ -69,22 +69,19 @@ endorsements_text + endorsements.value;
 
 // alert(str);
 
-clipboard.writeText(str).then(
-	function(){
-		document.getElementById("Copy_Button").innerText = "Copied!";
-		document.getElementById("Copy_Button").className = "copy-button-slow";
+clipboard.writeText(str);
+
+document.getElementById("copy-button").innerText = "Copied!";
+document.getElementById("copy-button").className = "copy-button-slow";
+	setTimeout(function(){
+		document.getElementById("copy-button").style.color = "#3b5166"
 		setTimeout(function(){
-			document.getElementById("Copy_Button").style.color = "#3b5166"
-			setTimeout(function(){
-				document.getElementById("Copy_Button").className = "copy-button-fast"
-				document.getElementById("Copy_Button").innerText = "Copy to Clipboard";
-				document.getElementById("Copy_Button").style.color = "#FFFFFF";
-			}, 700);
-		}, 500);
-	},
-	function(err){console.log("failure", err);}
-);
+			document.getElementById("copy-button").className = "copy-button-fast"
+			document.getElementById("copy-button").innerText = "Copy to Clipboard";
+			document.getElementById("copy-button").style.color = "#FFFFFF";
+		}, 700);
+	}, 500);
+};
 
 };
-  
-};
+

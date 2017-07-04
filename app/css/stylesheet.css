@@ -68,8 +68,8 @@ button:hover {
 
             text-align:initial;
             display:inline-block;
-            width:450px;
-            height:530px;
+            width:472px;
+            height:531px;
             margin:auto;
             background-color:#6889a8;
 
@@ -146,7 +146,7 @@ button:hover {
             display: table-row-group;
 }
 
-input {
+input, select {
     -webkit-app-region: no-drag;
 }
 
