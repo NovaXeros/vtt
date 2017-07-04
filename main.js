@@ -11,6 +11,7 @@ app.on('ready', function(){
         mainWindow = new BrowserWindow({
             frame: false,
             width: 480,
+            minHeight: 550,
             resizable: false
         });
         
