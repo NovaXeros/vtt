@@ -17,147 +17,131 @@ html, body {
     -webkit-app-region: no-drag;
 }
 
-.action-button {
-            background-color: #3b5166;
-            border: none;
-            color: white;
-            padding: 8px 10px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 14px;
-            font-family: 'Roboto', sans-serif;
-            -webkit-app-region: no-drag;
+.header {
+	text-align: center;
+	width:100%;
+	height:40px;
+	font-size: 24px;
 }
 
-.copy-button-slow {
-            background-color: #3b5166;
-            width: 136px;
-            border: none;
-            color: white;
-            padding: 8px 10px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 14px;
-            font-family: 'Roboto', sans-serif;
-            -webkit-app-region: no-drag;
-            -webkit-transition: color 1s;
+.form-group {
+	margin-top: 5px;
+	padding-top: 5px;
+	clear: both;
+	width: 100%;
 }
 
-.copy-button-fast {
-            background-color: #3b5166;
-            width: 136px;
-            border: none;
-            color: white;
-            padding: 8px 10px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 14px;
-            font-family: 'Roboto', sans-serif;
-            -webkit-app-region: no-drag;
-            -webkit-transition: color 0.195s;
+.main-label {
+	float: left;
 }
 
-button:hover {
-            background-color: #4e6882;
-}
-
-.center-box {
-
-            text-align:initial;
-            display:inline-block;
-            width:472px;
-            height:531px;
-            margin:auto;
-            background-color:#6889a8;
-
-}
-
-
-.text-area {
-
-            padding-top:15px;
-            padding-left:15px;
-            padding-right:15px;
-            padding-bottom:15px;
-            color:white;
-            font-family: 'Roboto', sans-serif;
-            font-size: 13px;
-
-}
-
-.divTable{
-            display: table;
-            width: 100%;
-}
-
-.divTableRow {
-            display: table-row;
-}
-
-.divTableHeading {
-            background-color: #EEE;
-            display: table-header-group;
-}
-
-.divTableCellRight, .divTableHead {
-            border: 0px solid #999999;
-            display: table-cell;
-            padding: 1px 1px 3px;
-            text-align: right;
-            
-}
-
-.divTableCell, .divTableHead {
-            border: 0px solid #999999;
-            display: table-cell;
-            padding: 1px 1px 3px;
-            width: 52%;
-}
-
-.divTableCellFooter {
-            border: 0px solid #999999;
-            display: table-cell;
-            padding: 0px ;
-}
-
-.divHeader {
-            text-align: center;
-            width:100%;
-            height:40px;
-            font-size: 24px;
-}
-
-.divTableHeading {
-            background-color: #EEE;
-            display: table-header-group;
-            font-weight: bold;
-}
-
-.divTableFoot {
-            background-color: #EEE;
-            display: table-footer-group;
-            font-weight: bold;
-}
-
-.divTableBody {
-            display: table-row-group;
+.q-label {
+	float: right;
+	padding: 4px;
+	font-size: 10px;
 }
 
 input, select {
+	float: right;
+	height: 20px;
+	border: 2px solid #f7f7f7;
+	background-color: #f7f7f7;
     -webkit-app-region: no-drag;
 }
 
-input, textarea, select {
-            border: 2px solid #f7f7f7;
-            width:100%;
-            background-color: #f7f7f7;
+input:focus, select:focus {
+	border: 2px solid #fcfcfc;
+	background-color: #fcfcfc;
 }
 
-input:focus, textarea:focus, select:focus {
-            border: 2px solid #fcfcfc;
-            width:100%;
-            background-color: #fcfcfc;
+textarea {
+	overflow: hidden;
+	border: 2px solid #f7f7f7;
+	background-color: #f7f7f7;
+	float: right;
+	width: 250px;
+	height: 20px;
+	resize: none;
+	white-space: pre-wrap;
+	
+	-webkit-transition: height 195ms;
+	transition-timing-function: ease-out;
+    -webkit-app-region: no-drag;
+}
+
+textarea:focus {
+	overflow: hidden;
+	border: 2px solid #fcfcfc;
+	background-color: #fcfcfc;
+	-webkit-transition: height 225ms;
+	transition-timing-function: ease-in;
+	height: 100px;
+
+}
+
+
+.text-box-shared {
+	width: 204px;
+}
+
+.text-box-full {
+	width: 250px;
+}
+
+#wrapper {
+	position: absolute;
+  	top: 50%;
+  	left: 50%;
+  	transform: translate(-50%, -50%);
+	width: 465px;
+	color:white;
+	margin:auto;
+	font-family: 'Roboto', sans-serif;
+	font-size: 13px;
+	padding-top:15px;
+	padding-left:15px;
+	padding-right:15px;
+	padding-bottom:15px;
+	background-color:#6889a8; 
+	box-shadow: 0px 0px 5px #3d5368;
+}
+
+.checkbox-carrier {
+	float: right
+	width: 50px;
+}
+
+#reset-button {
+	float: left;
+}
+
+#copy-button {
+	float: right;
+}
+
+button {
+	background-color: #3b5166;
+	border: none;
+	color: white;
+	padding: 8px 10px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 14px;
+	font-family: 'Roboto', sans-serif;
+    -webkit-app-region: no-drag;
+}
+
+button:hover {
+	background-color: #4e6882;
+}
+
+.copy-button-fast {
+	width: 136px;
+	-webkit-transition: color 0.195s;
+}
+
+.copy-button-slow {
+	width: 136px;
+	-webkit-transition: color 1s;
 }
