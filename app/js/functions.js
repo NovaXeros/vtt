@@ -21,19 +21,11 @@ var con_sumsinsured = document.getElementById("con-si");
 
 var bui_adcover_text = "Buildings AD - ";
 
-if (document.getElementById("bui-ad-q").checked == true) {
-	var bui_adcover = "Yes";
-} else {
-	var bui_adcover = "No";
-};
+var bui_adcover = (document.getElementById("bui-ad-q").checked == true) ? "Yes" : "No";
 
 var con_adcover_text = "Buildings AD - ";
 
-if (document.getElementById("con-ad-q").checked == true) {
-	var con_adcover = "Yes";
-} else {
-	var con_adcover = "No";
-};
+var con_adcover = (document.getElementById("con-ad-q").checked == true) ? "Yes" : "No";
 
 var personal_text = "Personal Belongings/Personal Possessions cover - ";
 var personal = document.getElementById("pp-si");
