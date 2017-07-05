@@ -46,19 +46,23 @@
 <div class="form-group">
 	<br/>
 	<div class="checkbox-carrier">
-		<input type="checkbox" id="bui-ad-q" />
-		<label class="q-label" for="bui-ad-q">AD?</label>
-	</div>
+		<input class="text-box-shared" id="bui-si" />
+		<div style="float:left;">
+			<input type="checkbox" id="bui-ad-q" />
+			<label class="q-label" for="bui-ad-q">AD?</label>
+		</div>
+	</div>	
 	<label class="main-label" for="bui-si">Buildings SI -</label>
-	<input class="text-box-shared" id="bui-si" />
 </div>
 <div class="form-group">
 	<div class="checkbox-carrier">
-		<input type="checkbox" id="con-ad-q" />
-		<label class="q-label" for="con-ad-q">AD?</label>
+		<input class="text-box-shared" id="con-si" />
+		<div style="float:left;">
+			<input type="checkbox" id="con-ad-q" />
+			<label class="q-label" for="con-ad-q">AD?</label>
+		</div>
 	</div>
 	<label class="main-label" for="Student">Contents SI -</label>
-	<input class="text-box-shared" id="con-si" />
 </div>
 <div class="form-group">
 	<label class="main-label" for="pp-si">PP/PB SI -</label>
@@ -92,8 +96,8 @@
 </div>
 <div class="form-group">
 <br/>
-<button id="reset-button" type="reset" value="Reset">Reset</button>
 <button id="copy-button" type="button" class="copy-button-fast" onclick="processFlow()">Copy to Clipboard</button>
+<button id="reset-button" type="reset" value="Reset">Reset</button>
 <br/>
 </div>
 
