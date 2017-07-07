@@ -110,10 +110,12 @@ textarea:focus {
 }
 
 #reset-button {
+	width: 108px;
 	float: left;
 }
 
 #copy-button {
+	width: 140px;
 	float: right;
 }
 
@@ -134,12 +136,10 @@ button:hover {
 	background-color: #4e6882;
 }
 
-.copy-button-fast {
-	width: 140px;
+.button-fast {	
 	-webkit-transition: color 0.195s;
 }
 
-.copy-button-slow {
-	width: 140px;
+.button-slow {
 	-webkit-transition: color 1s;
 }
