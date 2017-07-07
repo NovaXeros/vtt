@@ -1,5 +1,8 @@
 const {clipboard} = require('electron')
 
+var closeButton = document.querySelector("#copy-button")
+var resetButton = document.querySelector("#reset-button")
+
 var str;
 
 function processFlow() {
@@ -81,17 +84,54 @@ endorsements_text + endorsements;
 
 clipboard.writeText(str);
 
-document.getElementById("copy-button").innerText = "Copied!";
-document.getElementById("copy-button").className = "copy-button-slow";
+copyButton.innerText = "Copied!";
+copyButton.className = "copy-button-slow";
 	setTimeout(function(){
-		document.getElementById("copy-button").style.color = "#3b5166"
+		copyButton.style.color = "#3b5166"
 		setTimeout(function(){
-			document.getElementById("copy-button").className = "copy-button-fast"
-			document.getElementById("copy-button").innerText = "Copy to Clipboard";
-			document.getElementById("copy-button").style.color = "#FFFFFF";
+			copyButton.className = "copy-button-fast"
+			copyButton.innerText = "Copy to Clipboard";
+			copyButton.style.color = "#FFFFFF";
 		}, 700);
 	}, 500);
 };
 
 };
+
+var mouse_is_down = false;
+var current_i = 0;    
+
+resetButton.onmousedown = function(){
+    mouse_is_down = true;
+    
+    setTimeout(
+        (function(index){
+            return function(){
+                if(mouse_is_down && current_i === index){
+                    //do thing when hold
+
+			document.getElementById("template-form").reset();
+
+			resetButton.innerText = "Reset!";
+			resetButton.className = "button-slow";
+			setTimeout(function(){
+				document.getElementById("reset-button").style.color = "#3b5166"
+				setTimeout(function(){
+					resetButton.className = "button-fast"
+					resetButton.innerText = "Hold to Reset";
+					resetButton.style.color = "#FFFFFF";
+				}, 700);
+			}, 500);
+                    
+                };
+            };
+        })(++current_i), 1000); // time you want to hold before fire action
+};
+
+resetButton.onmouseup = function(){
+    mouse_is_down = false;
+    current_i++;
+    
+};
+
 
