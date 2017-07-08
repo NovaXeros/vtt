@@ -9,95 +9,103 @@
 <link rel="stylesheet" type="text/css" href="./css/stylesheet.css">
 
 <noscript>Javascript isn"t working!</noscript>
-<script src="./js/functions.js"></script>
-
+<!-- Insert this line above script imports  -->
+<script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+<script src="js/jquery.min.js"></script>
+<script src="js/carriers.js"></script>
+<!-- Insert this line after script imports -->
+<script>if (window.module) module = window.module;</script>
 </head>
 
 <body>
-
 <div id="close-button" class="close-button">X</div>
-<div class="center-box">
+<div id="wrapper">
 
-<div class="text-area">
-<div class="divHeader"><text style="font-family: 'Raleway', sans-serif; letter-spacing: 2px" class="header-text"><b>~ Validation Template ~</b></text></div>
-<form>
-<div class="divTable">
-<div class="divTableBody">
-<div class="divTableRow">
-<div class="divTableCell">How cover details obtained -</div>
-<div class="divTableCellRight"><input type="text" id="HowObtained" ></div>
+<div class="header"><center>~ Validation Tool ~</center></div>
+
+<form id="template-form">
+<div class="form-group">
+	<label class="main-label" for="how-obtained">How cover details obtained -</label>
+	<input class="text-box-full" name="how-obtained" id="how-obtained" />
 </div>
-<br/>
-<div class="divTableRow">
-<div class="divTableCell">Underwriter -</div>
-<div class="divTableCellRight"><input type="text" id="Underwriter" ></div>
+<div class="form-group">
+	<br/>
+	<label class="main-label">Underwriter -</label>
+	<select class="text-box-full" id="carrier"></select>
 </div>
-<div class="divTableRow">
-<div class="divTableCell">Scheme -</div>
-<div class="divTableCellRight"><input type="text" id="Scheme" ></div>
+<div class="form-group">
+	<label class="main-label" for="scheme">Scheme -</label>
+	<input class="text-box-full" id="scheme" />
 </div>
-<br/>
-<div class="divTableRow">
-<div class="divTableCell">Sums insured - BUI & CON -</div>
-<div class="divTableCellRight"><input type="text" id="SIValues" ></div>
+<div class="form-group">
+	<br/>
+	<label class="main-label" for="inc-renewal">Inception/Renewal Date -</label>
+	<input class="text-box-full" id="inc-renewal" />
 </div>
-<div class="divTableRow">
-<div class="divTableCell">AD cover - Y/N -</div>
-<div class="divTableCellRight"><input type="text" id="ADCover" ></div>
+<div class="form-group">
+	<label class="main-label" for="jph">Joint Policyholder(s) -</label>
+	<textarea id="jph" /></textarea>
 </div>
-<div class="divTableRow">
-<div class="divTableCell">PB/PP cover -</div>
-<div class="divTableCellRight"><input type="text" id="PP-PB" ></div>
+<div class="form-group">
+	<br/>
+	<div class="checkbox-carrier">
+		<input class="text-box-shared" id="bui-si" />
+		<div style="float:left;">
+			<input type="checkbox" id="bui-ad-q" />
+			<label class="q-label" for="bui-ad-q">AD?</label>
+		</div>
+	</div>	
+	<label class="main-label" for="bui-si">Buildings SI -</label>
 </div>
-<div class="divTableRow">
-<div class="divTableCell">Specified cover & items -</div>
-<div class="divTableCellRight"><input type="text" id="SpecCover" ></div>
+<div class="form-group">
+	<div class="checkbox-carrier">
+		<input class="text-box-shared" id="con-si" />
+		<div style="float:left;">
+			<input type="checkbox" id="con-ad-q" />
+			<label class="q-label" for="con-ad-q">AD?</label>
+		</div>
+	</div>
+	<label class="main-label" for="con-si">Contents SI -</label>
 </div>
-<div class="divTableRow">
-<div class="divTableCell">Unspecified cover -</div>
-<div class="divTableCellRight"><input type="text" id="UnspecCover" ></div>
+<div class="form-group">
+	<label class="main-label" for="pp-si">PP/PB SI -</label>
+	<input class="text-box-full" id="pp-si" />
 </div>
-<div class="divTableRow">
-<div class="divTableCell">Standard excesses incl. EOW etc -</div>
-<div class="divTableCellRight"><input type="text" id="StandardXS" ></div>
+<div class="form-group">
+	<label class="main-label" for="unspec-si">Unspecified Cover -</label>
+	<input class="text-box-full" id="unspec-si" />
 </div>
-<div class="divTableRow">
-<div class="divTableCell">Voluntary excesses -</div>
-<div class="divTableCellRight"><input type="text" id="VolXS" ></div>
+<div class="form-group">
+	<label class="main-label" for="spec-si-items">Specified Cover/Items -</label>
+	<textarea id="spec-si-items"></textarea>
 </div>
-<div class="divTableRow">
-<div class="divTableCell">Inception/Renewal date -</div>
-<div class="divTableCellRight"><input type="text" id="IncRenew" ></div>
+<div class="form-group">
+	<br/>
+	<label class="main-label" for="standard-xs">Standard Excess incl. EOW, etc. -</label>
+	<input class="text-box-full" id="standard-xs" />
 </div>
-<br/>
-<div class="divTableRow">
-<div class="divTableCell">Previous claims -</div>
-<div class="divTableCellRight"><input type="text" id="PreviousClaims" ></div>
+<div class="form-group">
+	<label class="main-label" for="voluntary-xs">Voluntary Excess -</label>
+	<input class="text-box-full" id="voluntary-xs" />
 </div>
-<div class="divTableRow">
-<div class="divTableCell">Any joint policy holders (JPH) -</div>
-<div class="divTableCellRight"><input type="text" id="JPHPresent" ></div>
+<div class="form-group">
+	<br/>
+	<label class="main-label" for="prev-claims">Previous Claims -</label>
+	<textarea id="prev-claims"></textarea>
 </div>
-<div class="divTableRow">
-<div class="divTableCell">Endorsements -</div>
-<div class="divTableCellRight"><textarea style="resize:none; width:100%;" type="text" id="Endorsements" ></textarea></div>
-</div>
-<br/>
-<div class="divTableRow">
-<div class="divTableCellFooter"><button class="action-button" type="reset" value="Reset">Reset</button></div>
-<div class="divTableCellFooter" style="text-align:right;"><button class= "action-button" type="button" onclick="processFlow()">Copy to Clipboard</button></div>
-</div>
-</div>
+<div class="form-group">
+	<label class="main-label" for="endorsements">Endorsements -</label>
+	<textarea id="endorsements"></textarea>
 </div>
 
 </form>
 
-
 </div>
+<button id="copy-button" type="button" class="button-fast" onclick="processFlow()">Copy to Clipboard</button>
+<button id="reset-button" tabindex="-1" type="button" class="button-fast">Hold to Reset</button>
 
-</div>
-
-<script src="js/index.js"></script>
 </body>
 
+<script src="js/functions.js"></script>
+<script src="js/index.js"></script>
 </html>

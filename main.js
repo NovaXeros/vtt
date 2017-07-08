@@ -10,8 +10,7 @@ const ipc = require('electron').ipcMain
 app.on('ready', function(){
         mainWindow = new BrowserWindow({
             frame: false,
-            height: 530,
-            width: 450,
+            width: 495,
             resizable: false
         });
         
