@@ -1,6 +1,6 @@
 const {clipboard} = require('electron')
 
-var closeButton = document.querySelector("#copy-button")
+var copyButton = document.querySelector("#copy-button")
 var resetButton = document.querySelector("#reset-button")
 
 var str;
@@ -85,11 +85,11 @@ endorsements_text + endorsements;
 clipboard.writeText(str);
 
 copyButton.innerText = "Copied!";
-copyButton.className = "copy-button-slow";
+copyButton.className = "button-slow";
 	setTimeout(function(){
 		copyButton.style.color = "#3b5166"
 		setTimeout(function(){
-			copyButton.className = "copy-button-fast"
+			copyButton.className = "button-fast"
 			copyButton.innerText = "Copy to Clipboard";
 			copyButton.style.color = "#FFFFFF";
 		}, 700);
@@ -115,7 +115,7 @@ resetButton.onmousedown = function(){
 			resetButton.innerText = "Reset!";
 			resetButton.className = "button-slow";
 			setTimeout(function(){
-				document.getElementById("reset-button").style.color = "#3b5166"
+				resetButton.style.color = "#3b5166"
 				setTimeout(function(){
 					resetButton.className = "button-fast"
 					resetButton.innerText = "Hold to Reset";
