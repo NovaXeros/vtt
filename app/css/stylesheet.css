@@ -1,8 +1,9 @@
 html, body {
     margin: 0px;
+    -webkit-user-select: none;
     -webkit-app-region: drag;
     overflow: hidden;
-	background-color:#6889a8; 
+    background-color:#6889a8; 
 }
 
 .close-button {
