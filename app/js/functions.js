@@ -26,7 +26,7 @@ var bui_adcover_text = "Buildings AD - ";
 
 var bui_adcover = (document.getElementById("bui-ad-q").checked == true) ? "Yes" : "No";
 
-var con_adcover_text = "Buildings AD - ";
+var con_adcover_text = "Contents AD - ";
 
 var con_adcover = (document.getElementById("con-ad-q").checked == true) ? "Yes" : "No";
 
