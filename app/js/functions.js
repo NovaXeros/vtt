@@ -135,4 +135,14 @@ resetButton.onmouseup = function(){
     
 };
 
+var spacesButton = document.querySelector("#space-button");
 
+spacesButton.onclick = function(){
+	if (spacesOn == true) {
+		spacesButton.style.backgroundImage = "url('./img/spaces-white-off.png')";
+		spacesOn = false;
+	} else {
+		spacesButton.style.backgroundImage = "url('./img/spaces-white-on.png')";
+		spacesOn = true;
+	};
+};
