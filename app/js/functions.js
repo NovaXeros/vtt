@@ -4,6 +4,7 @@ var copyButton = document.querySelector("#copy-button")
 var resetButton = document.querySelector("#reset-button")
 
 var str;
+var spacesOn = true;
 
 function processFlow() {
 
@@ -63,20 +64,20 @@ if (underwriter.value == "Please select") {
 
 } else {
   
-str = obtained_text + obtained.value + "\r\n\r\n" +
+str = obtained_text + obtained.value + (spacesOn == true ? "\r\n\r\n" : "\r\n") +
 underwriter_text + underwriter.value + "\r\n" +
-scheme_text + scheme.value + "\r\n\r\n" +
+scheme_text + scheme.value + (spacesOn == true ? "\r\n\r\n" : "\r\n") +
 renewal_text + renewal.value + "\r\n" +
-jph_text + jph + "\r\n\r\n" +
+jph_text + jph + (spacesOn == true ? "\r\n\r\n" : "\r\n") +
 bui_sumsinsured_text + bui_sumsinsured.value + "\r\n" +
 bui_adcover_text + bui_adcover + "\r\n" +
 con_sumsinsured_text + con_sumsinsured.value + "\r\n" +
 con_adcover_text + con_adcover + "\r\n" +
 personal_text + personal.value + "\r\n" +
 unspecified_text + unspecified.value + "\r\n" +
-specified_text + specified + "\r\n\r\n" +
+specified_text + specified + (spacesOn == true ? "\r\n\r\n" : "\r\n") +
 standardxs_text + standardxs.value + "\r\n" +
-voluntaryxs_text + voluntaryxs.value + "\r\n\r\n" +
+voluntaryxs_text + voluntaryxs.value + (spacesOn == true ? "\r\n\r\n" : "\r\n") +
 history_text + history + "\r\n" +
 endorsements_text + endorsements;
 
