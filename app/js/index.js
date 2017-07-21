@@ -5,6 +5,10 @@ index file, and not started or stopped by the user.
 
 */
 
+//setup event listener and ipc communication for app.close button press
+const ipc = require('electron').ipcRenderer
+var closeEl = document.getElementById('close-button');
+
 // Populate the carrier dropdown box with data in the carriers_var object
 var $select = $('#carrier'); 
 $select.html('');
@@ -36,14 +40,10 @@ function KeyPress(e) {
 	};
 };
 
+// Detect when a button is pressed on the document
 document.onkeydown = KeyPress;	
 
-
-//setup event listener and ipc communication for app.close button press
-const ipc = require('electron').ipcRenderer
-
-var closeEl = document.getElementById('close-button');
-
+// Detect when the close button is clicked and trigger the close-main-window de-render
 closeEl.addEventListener('click', function() {
     ipc.send('close-main-window');
 });
