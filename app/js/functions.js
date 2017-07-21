@@ -1,3 +1,9 @@
+/*
+
+Functions and code declared in this file are for user controlled aspects of VTT.
+
+*/
+
 const {clipboard} = require('electron')
 
 // Final Output String
