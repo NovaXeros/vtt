@@ -37,19 +37,6 @@ html, body {
   	transform: translate(-50%, -50%);
 }
 
-.space-button {
-	position: absolute;
-	top: 5px;
-	left: 5px;
-	cursor: pointer;
-	float: right;
-	height: 40px;
-	width: 40px;
-	background-image: url("../img/spaces-white-on.png");
-	opacity: 0.85;
-	background-size: contain;
-}
-
 .form-group {
 	margin-top: 5px;
 	padding-top: 5px;
@@ -118,7 +105,7 @@ textarea:focus {
 	width: 204px;
 }
 
-.text-box-full {
+.text-box-full, .text-box-numeric {
 	width: 250px;
 }
 
@@ -184,4 +171,41 @@ button:hover {
 
 .button-slow {
 	-webkit-transition: color 1s;
+}
+
+.space-button {
+	position: absolute;
+	top: 0;
+	right: 0;
+	cursor: pointer;
+	float: right;
+	height: 40px;
+	width: 40px;
+	background-image: url("../img/spaces-white-on.png");
+	opacity: 0.85;
+	background-size: contain;
+}
+
+.debug-menu {
+	cursor: default;
+	color: white;
+	font-size: 12px;
+	font-family: 'Roboto', sans-serif;
+	text-align: center;
+	display: none;
+	position: absolute;
+	padding: 10px 10px 10px 10px;
+	top: 10;
+	left: 10;
+	background-color:#6889a8; 
+	box-shadow: 0px 0px 2px #3d5368;
+	z-index: 2;
+}
+
+.debug-menu a {
+	cursor: pointer;
+	text-decoration: none;
+	color: white;
+	font-size: 12px;
+	font-family: 'Roboto', sans-serif;
 }
