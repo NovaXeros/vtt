@@ -1,3 +1,44 @@
+/*
+
+Functions and code declared in this file are for the automated functions initialised on loading of the
+index file, and not started or stopped by the user.
+
+*/
+
+// Populate the carrier dropdown box with data in the carriers_var object
+var $select = $('#carrier'); 
+$select.html('');
+$.each(carriers_var, function(key, val){ 
+$select.append('<option id="' + val.ID + '">' + val.Name + '</option>');
+});
+
+// Populate elements with labels
+var labels = document.getElementsByTagName('LABEL');
+for (var i = 0; i < labels.length; i++) {
+    if (labels[i].htmlFor != '') {
+         var elem = document.getElementById(labels[i].htmlFor);
+         if (elem)
+            elem.label = labels[i];         
+    }
+}
+
+// Enable debug menu
+function KeyPress(e) {
+	var debugMenu = document.getElementById("debug-menu");
+	
+	var evtobj = window.event? event : e
+	if (evtobj.keyCode == 66 && evtobj.ctrlKey) {
+	if (debugMenu.style.display == "none") {
+		debugMenu.style.display = "inline";
+	} else {
+		debugMenu.style.display = "none";
+	};
+	};
+};
+
+document.onkeydown = KeyPress;	
+
+
 //setup event listener and ipc communication for app.close button press
 const ipc = require('electron').ipcRenderer
 
@@ -5,16 +46,4 @@ var closeEl = document.getElementById('close-button');
 
 closeEl.addEventListener('click', function() {
     ipc.send('close-main-window');
-});
-
-//get a reference to the select element
-var $select = $('#carrier');
- 
-//clear the current content of the select
-$select.html('');
- 
-//iterate over the data and append a select option
-
-$.each(carriers_var, function(key, val){ 
-$select.append('<option id="' + val.ID + '">' + val.Name + '</option>');
 });
